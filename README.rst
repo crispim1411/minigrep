@@ -35,7 +35,7 @@ Test-driven development(TDD)
 
 Ler argumentos 
 ===============
-::
+.. code-block:: rust
 
     let args: Vec<String> = env::args().collect();
 
@@ -43,14 +43,14 @@ Obs: Chamada env::args ao invés de args pode ser menos ambígua pois indica o m
 
 Lendo um arquivo
 =================
-::
+.. code-block:: rust
 
     let contents = fs::read_to_string(filename)
         .expect("Something went wrong reading the file");
 
 Agrupar variáveis numa estrutura
 =================================
-::
+.. code-block:: rust
 
     struct Config {
         query: String,
@@ -72,7 +72,7 @@ Agrupar variáveis numa estrutura
 
 Retornando tipo Result invés de chamar Panic
 =============================================
-::
+.. code-block:: rust
 
     impl Config {
         fn new(args: &[String]) -> Result<Config, &'static str> {
@@ -89,7 +89,7 @@ Retornando tipo Result invés de chamar Panic
 
 * Obs: A chamada em main.rs se torna um unwrap
 
-::
+.. code-block:: rust
 
     let config = Config::new(&args).unwrap_or_else(|err| {
         println!("Problem parsing arguments: {}", err);
@@ -98,8 +98,8 @@ Retornando tipo Result invés de chamar Panic
 
 Adaptando o erro leitura de arquivo
 ====================================
-- lib.rs
-::
+* lib.rs
+.. code-block:: rust
 
     fn run(config: Config) -> Result<(), Box<dyn Error>> {
         let contents = fs::read_to_string(config.filename)?;
@@ -109,8 +109,8 @@ Adaptando o erro leitura de arquivo
         Ok(())
     }
 
-- main.rs
-::
+* main.rs
+.. code-block:: rust
 
     if let Err(e) = run(config) {
         println!("Application error: {}", e);
@@ -120,11 +120,11 @@ Adaptando o erro leitura de arquivo
 
 Referenciando variável por lifetime
 =====================================
-::
+.. code-block:: rust
 
     pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
         vec![]
     }
 
-* Desta forma os dados do resultado serão válidos enquanto os dados em contents forem válidos.
-* Evitando também do compilador assumir associação com query invés de contents.
+- Desta forma os dados do resultado serão válidos enquanto os dados em contents forem válidos.
+- Evitando também do compilador assumir associação com query invés de contents.
