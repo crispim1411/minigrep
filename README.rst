@@ -16,15 +16,15 @@ Considerações de Modularidade e Tratamento de Erro
 
 Separação dos binários
 =======================
-#. Mover a lógica para lib.rs
-#. Partes pequenas de código podem permanecer em main.rs
-#. Quando se tornar complexo extrair de main.rs para lib.rs
+#. Mover a lógica para *lib.rs*
+#. Partes pequenas de código podem permanecer em *main.rs*
+#. Quando se tornar complexo extrair de *main.rs* para *lib.rs*
 
 Responsabilidades em main.rs
 ==============================
 * Chamar lógica passando os argumentos
 * Setar alguma configuração
-* Chamar função run em lib.rs
+* Chamar função run em *lib.rs*
 * Tratar erro caso run retornar um erro
 
 Test-driven development(TDD)
@@ -40,7 +40,7 @@ Ler argumentos
 
     let args: Vec<String> = env::args().collect();
 
-Obs: Chamada env::args ao invés de args pode ser menos ambígua pois indica o módulo
+Obs: Chamada *env::args* ao invés de *args* evita ambiguidade pois indica o módulo
 
 Lendo um arquivo
 =================
@@ -88,7 +88,7 @@ Retornando tipo Result invés de chamar Panic
         }
     }
 
-* Obs: A chamada em main.rs se torna um unwrap
+* Obs: A chamada em *main.rs* se torna um unwrap
 
 .. code-block:: rust
 
@@ -127,5 +127,5 @@ Referenciando variável por lifetime
         vec![]
     }
 
-- Desta forma os dados do resultado serão válidos enquanto os dados em contents forem válidos.
-- Evitando também do compilador assumir associação com query invés de contents.
+- Desta forma os dados do resultado serão válidos enquanto os dados em *contents* forem válidos.
+- Evitando também do compilador assumir associação com *query* invés de *contents*.
