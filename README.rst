@@ -4,7 +4,7 @@ Projeto: Construindo um programa de linha de comando
 Projeto descrito na documentação da linguagem Rust com comentários
 a partir das explicações.
 
-Projeto: https://doc.rust-lang.org/book/ch12-00-an-io-project.html
+https://doc.rust-lang.org/book/ch12-00-an-io-project.html
 
 
 Considerações de Modularidade e Tratamento de Erro
