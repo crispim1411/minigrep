@@ -97,8 +97,8 @@ Retornando tipo Result invés de chamar Panic
         process::exit(1);
     });
 
-Adaptando o erro leitura de arquivo
-====================================
+Adaptando o erro na leitura de arquivo
+=======================================
 * lib.rs
 .. code-block:: rust
 
