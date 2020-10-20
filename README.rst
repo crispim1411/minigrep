@@ -141,3 +141,13 @@ Lendo variáveis de ambiente
 .. code-block:: bash
 
     $export CASE_INSENSITIVE=1
+
+
+Alterando a escrita dos erros
+==============================
+
+* Usando *eprintln!* para evitar do erro aparecer no resultado do código
+
+.. code-block:: rust
+
+    eprintln!("Problem parsing arguments: {}", err);
