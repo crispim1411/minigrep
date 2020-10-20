@@ -9,7 +9,7 @@ https://doc.rust-lang.org/book/ch12-00-an-io-project.html
 
 Considerações de Modularidade e Tratamento de Erro
 ===================================================
-#. Evitar da função main ter mais que uma responsabilidade
+#. Evitar da função *main* ter mais que uma responsabilidade
 #. agrupar variáveis com um certo propósito em estruturas
 #. Se preocupar se o erro retornado é explicativo
 #. Concentrar o tratamento de erro num único lugar
@@ -129,3 +129,15 @@ Referenciando variável por lifetime
 
 - Desta forma os dados do resultado serão válidos enquanto os dados em *contents* forem válidos.
 - Evitando também do compilador assumir associação com *query* invés de *contents*.
+
+Lendo variáveis de ambiente
+============================
+.. code-block:: rust
+
+    let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
+
+* Obs: foi usado *is_err* para verificação, retornando *true* se não estiver setada.
+
+.. code-block:: bash
+
+    $export CASE_INSENSITIVE=1
