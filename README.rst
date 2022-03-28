@@ -27,7 +27,7 @@ Responsabilidades em main.rs
 * Chamar função run em *lib.rs*
 * Tratar erro caso run retornar um erro
 
-Test-driven development(TDD)
+Test-Driven Development (TDD)
 =============================
 1) Escrever um teste que falhe e receber a falha esperada ao rodar
 2) Modificar para um teste que retorne sucesso
